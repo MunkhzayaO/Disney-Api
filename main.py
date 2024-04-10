@@ -1,4 +1,3 @@
-import pandas as pd
 from typing import Union
 from fastapi import FastAPI, HTTPException
 import pandas as pd
