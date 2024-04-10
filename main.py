@@ -1,6 +1,5 @@
 from typing import Optional
 from fastapi import FastAPI, HTTPException, Query
-import pandas as pd
 from pydantic import BaseModel
 from supabase import create_client, Client
 
@@ -11,10 +10,6 @@ app = FastAPI()
 url = "https://vzviwrmcojxqbwyxthql.supabase.co"
 key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6dml3cm1jb2p4cWJ3eXh0aHFsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE0MTk3NDIsImV4cCI6MjAyNjk5NTc0Mn0.9t4oid-YSfytXETr5yl_56j26_5dR3UiVeJLE7MoVt4"
 supabase: Client = create_client(url, key)
-
-# Load data from CSV into DataFrame
-df = pd.read_csv('disney.csv')
-df = df.fillna('')
 
 @app.get("/get_all")
 def get_all():
