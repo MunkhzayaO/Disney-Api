@@ -12,7 +12,6 @@ key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI
 
 supabase: Client = create_client(url, key)
 
-
 app = FastAPI()
 
 df = pd.read_csv('disney.csv')
